@@ -1,4 +1,11 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
+import { FiBell } from "react-icons/fi";
+import { FiHome } from "react-icons/fi";
+import { FiStar } from "react-icons/fi";
+import { FiMessageCircle } from "react-icons/fi";
+import { FiUser } from "react-icons/fi";
+import Logo from "./components/Logo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +17,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
 export const metadata = {
   title: "Family Friends",
   description:
@@ -18,22 +30,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">
-        <header>
-          <nav>
-            <ul>
-              <li>link</li>
-              <li>link</li>
-              <li>link</li>
-              <li></li>
-            </ul>
-          </nav>
+    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col px-4.5">
+        <header className="flex justify-between">
+          <Logo />
+          <FiBell />
         </header>
-        {children}
+        <main className="">{children}</main>
+        <footer className="flex justify-around">
+          <FiHome />
+          <FiStar />
+          <FiMessageCircle />
+          <FiUser />
+        </footer>
       </body>
     </html>
   );
