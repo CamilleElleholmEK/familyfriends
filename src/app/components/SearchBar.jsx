@@ -9,7 +9,7 @@ const SearchBar = () => {
           </button>
           <input
             name="query"
-            className="border-text-muted rounded-full border border-solid"
+            className="border-text-muted w-full rounded-full border border-solid"
           />
         </form>
       </div>

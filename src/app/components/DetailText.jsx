@@ -3,7 +3,7 @@ const DetailText = ({ description, history }) => {
     <>
       <div>
         <div>
-          <p className="text-text-muted text-sm font-medium">
+          <p className="font-man text-text-muted text-sm font-medium">
             Breed description
           </p>
           <p>{description}</p>

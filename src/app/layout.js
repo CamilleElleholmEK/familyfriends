@@ -31,17 +31,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col px-4.5">
-        <header className="flex justify-between">
-          <Logo />
-          <FiBell />
+      <body className="flex min-h-full flex-col">
+        <header className="">
+          <div className="flex justify-between px-4.5">
+            <Logo />
+            <FiBell />
+          </div>
         </header>
-        <main className="">{children}</main>
-        <footer className="flex justify-around">
-          <FiHome />
-          <FiStar />
-          <FiMessageCircle />
-          <FiUser />
+        <main className="px-4.5">{children}</main>
+        <footer className="bg-glass text-text-muted sticky bottom-0 flex justify-around rounded-t-4xl py-6.75 backdrop-blur-lg">
+          <FiHome className="text-primary h-6 w-6" />
+          <FiStar className="h-6 w-6" />
+          <FiMessageCircle className="h-6 w-6" />
+          <FiUser className="h-6 w-6" />
         </footer>
       </body>
     </html>
