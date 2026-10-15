@@ -32,14 +32,25 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
-        <header className="">
-          <div className="flex justify-between px-4.5">
+        <header className="py-4">
+          <div className="flex items-center justify-between px-4.5">
             <Logo />
-            <FiBell />
+            <div className="grid py-0.5 [grid-template-areas:'stack']">
+              <FiBell className="size-6 [grid-area:stack]" />
+              <svg
+                className="[grid-area:stack]"
+                height="24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle r="5" cx="19" cy="5" fill="var(--background)" />
+                <circle r="3" cx="19" cy="5" fill="var(--primary)" />
+              </svg>
+            </div>
           </div>
         </header>
         <main className="px-4.5">{children}</main>
-        <footer className="bg-glass text-text-muted sticky bottom-0 flex justify-around rounded-t-4xl py-6.75 backdrop-blur-lg">
+        <footer className="bg-glass text-text-muted sticky bottom-0 mt-8 flex justify-around rounded-t-4xl py-6.75 backdrop-blur-lg">
           <FiHome className="text-primary h-6 w-6" />
           <FiStar className="h-6 w-6" />
           <FiMessageCircle className="h-6 w-6" />

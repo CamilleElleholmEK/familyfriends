@@ -4,7 +4,7 @@ import { FiChevronLeft } from "react-icons/fi";
 const DetailImg = () => {
   return (
     <>
-      <div className="grid [grid-template-areas:'stack']">
+      <div className="mb-4 grid [grid-template-areas:'stack']">
         <Image
           src="/dummydog.jpg"
           width={360}

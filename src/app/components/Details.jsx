@@ -4,7 +4,7 @@ const Details = ({ breed }) => {
   return (
     <>
       <div>
-        <p className="text-3xl font-bold">{breed}</p>
+        <p className="mb-6 text-3xl font-bold">{breed}</p>
         <Tags
           trait1="Confident"
           trait2="Alert"
