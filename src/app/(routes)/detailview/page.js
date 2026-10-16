@@ -1,9 +1,10 @@
-import Link from "next/link";
+import DetailImg from "@/app/components/DetailImg";
+import Details from "@/app/components/Details";
 const DetailView = () => {
   return (
     <>
-      <h1>DetailView</h1>
-      <Link href="/">Back to ListView</Link>
+      <DetailImg breed="Affenpinscher" />
+      <Details breed="Affenpinscher" />
     </>
   );
 };

@@ -1,15 +1,22 @@
-import Link from "next/link";
-import Logo from "./components/Logo";
+// Components
+import DogCard from "./components/DogCard";
+import SearchBar from "./components/SearchBar";
+
+// Globals
 import "./globals.css";
-import BreedCard from "./components/BreedCard";
 
 export default function ListView() {
   return (
     <>
-      <Logo />
-      <h2>ListView</h2>
-      <Link href="/detailview">Go to DetailView</Link>
-      <BreedCard />
+      <SearchBar />
+      <div className="grid grid-cols-2 gap-x-4.5 gap-y-5">
+        <DogCard breed="Affenpinscher" location="Northern Germany" />
+        <DogCard breed="Afghan Hound" location="Afghanistan" />
+        <DogCard breed="Airedale Terrier" location="Yorkshire, England" />
+        <DogCard breed="Akbash" location="Western Turkey" />
+        <DogCard breed="Gravhund" location="Naboens have" />
+        <DogCard breed="Akita" location="Min baghave" />
+      </div>
     </>
   );
 }
