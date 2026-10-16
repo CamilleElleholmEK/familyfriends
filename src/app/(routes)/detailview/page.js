@@ -3,7 +3,7 @@ import Details from "@/app/components/Details";
 const DetailView = () => {
   return (
     <>
-      <DetailImg />
+      <DetailImg breed="Affenpinscher" />
       <Details breed="Affenpinscher" />
     </>
   );
