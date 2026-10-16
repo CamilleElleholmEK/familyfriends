@@ -5,26 +5,26 @@ import { FiStar } from "react-icons/fi";
 const DogCard = ({ breed, location }) => {
   return (
     <>
-      <div className="bg-card w-fit rounded-2xl">
-        <div className="grid [grid-template-areas:'stack']">
-          <Link href="/detailview" className="[grid-area:stack]">
+      <article className="dogcard hover w-full max-w-55 justify-self-center sm:max-w-65">
+        <div className="stackcontainer">
+          <Link href="/detailview" className="stackitem">
             <Image
               src="/dummydog.jpg"
-              width={160}
-              height={114}
+              width={500}
+              height={500}
               alt="Hund"
-              className="rounded-2xl [grid-area:stack]"
+              className="stackitem aspect-4/3 w-full rounded-2xl object-cover"
             />
           </Link>
-          <button className="bg-glass m-2 h-fit w-fit justify-self-end rounded-full p-1.25 backdrop-blur-lg [grid-area:stack]">
+          <button className="hover glasseffect stackitem m-2 h-fit w-fit justify-self-end rounded-full p-1.25">
             <FiStar className="text-card" />
           </button>
         </div>
-        <div className="px-3 py-4">
-          <p className="text-base font-bold">{breed}</p>
-          <p className="text-text-muted text-xs">{location}</p>
+        <div className="text">
+          <p>{breed}</p>
+          <p>{location}</p>
         </div>
-      </div>
+      </article>
     </>
   );
 };

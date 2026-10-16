@@ -1,17 +1,19 @@
 import { FiSearch } from "react-icons/fi";
+import Form from "next/form";
 const SearchBar = () => {
   return (
     <>
       <div className="mt-4 mb-8">
-        <form className="flex gap-3">
-          <button type="submit" className="bg-primary rounded-full p-2.5">
+        <Form action="/search" className="flex gap-3">
+          <button type="submit" className="bg-primary hover rounded-full p-2.5">
             <FiSearch className="text-card" />
           </button>
           <input
             name="query"
-            className="border-text-muted w-full rounded-full border border-solid"
+            placeholder="Search breeds"
+            className="border-text-muted w-full rounded-full border border-solid px-3"
           />
-        </form>
+        </Form>
       </div>
     </>
   );

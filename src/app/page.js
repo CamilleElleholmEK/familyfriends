@@ -9,7 +9,7 @@ export default function ListView() {
   return (
     <>
       <SearchBar />
-      <div className="grid grid-cols-2 gap-x-4.5 gap-y-5">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
         <DogCard breed="Affenpinscher" location="Northern Germany" />
         <DogCard breed="Afghan Hound" location="Afghanistan" />
         <DogCard breed="Airedale Terrier" location="Yorkshire, England" />

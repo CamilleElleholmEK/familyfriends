@@ -32,6 +32,49 @@
   --color-text-tag: var(--text-tag);
 }
 
+@layer components {
+  .dogcard {
+    background-color: var(--card);
+    width: max-content;
+    border-radius: var(--radius-2xl);
+
+    .text {
+      padding-inline: 12;
+      padding-block: 16;
+      > :first-child {
+        font-size: var(--text-base);
+        line-height: var(--text-base--line-height);
+        font-weight: 700;
+      }
+      > :nth-child(2) {
+        color: var(--text-muted);
+        font-size: var(--text-xs);
+        line-height: var(--text-xs--line-height);
+      }
+    }
+  }
+  .glasseffect {
+    backdrop-filter: blur(var(--blur-lg));
+    background-color: var(--glass);
+  }
+
+  .stackcontainer {
+    display: grid;
+    grid-template-areas: "stack";
+    .stackitem {
+      grid-area: stack;
+    }
+  }
+
+  .hover {
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+      cursor: pointer;
+    }
+  }
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
