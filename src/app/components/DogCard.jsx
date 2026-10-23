@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiStar } from "react-icons/fi";
 
-const DogCard = ({ breed, location }) => {
+const DogCard = ({ breed, location, imgsrc }) => {
   return (
     <>
       <article className="dogcard hover w-full max-w-55 justify-self-center sm:max-w-65">
         <div className="stackcontainer">
           <Link href="/detailview" className="stackitem">
             <Image
-              src="/dummydog.jpg"
+              src={imgsrc}
               width={500}
               height={500}
               alt="Hund"
