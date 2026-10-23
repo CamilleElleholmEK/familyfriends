@@ -1,13 +1,14 @@
 import DetailImg from "@/app/components/DetailImg";
 import Details from "@/app/components/Details";
-import DogCard from "@/app/components/DogCard";
+import { Suspense } from "react";
+import Loading from "@/app/components/Loading";
 
 const DetailView = ({ params }) => {
   return (
     <>
-      {/* <DetailImg breed={dog.name} />
-      <Details breed="Affenpinscher" /> */}
-      <FetchDetailData params={params} />
+      <Suspense fallback={<Loading />}>
+        <FetchDetailData params={params} />
+      </Suspense>
     </>
   );
 };

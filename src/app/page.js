@@ -1,6 +1,8 @@
 // Components
 import DogCard from "./components/DogCard";
 import SearchBar from "./components/SearchBar";
+import Loading from "./components/Loading";
+import { Suspense } from "react";
 
 // Globals
 import "./globals.css";
@@ -9,9 +11,11 @@ export default function ListView() {
   return (
     <>
       <SearchBar />
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-        <FetchData />
-      </div>
+      <Suspense fallback={<Loading />}>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+          <FetchData />
+        </div>
+      </Suspense>
     </>
   );
 }
