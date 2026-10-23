@@ -73,6 +73,10 @@
       cursor: pointer;
     }
   }
+
+  .trait {
+    text-transform: capitalize;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

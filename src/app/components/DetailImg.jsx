@@ -2,15 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiStar } from "react-icons/fi";
-const DetailImg = ({ breed }) => {
+const DetailImg = ({ breed, img }) => {
   return (
     <>
       <div className="stackcontainer mb-4 w-fit">
         <Image
-          src="/dummydog.jpg"
+          src={img}
           width={360}
           height={360}
-          alt="Hund"
+          alt={breed}
           className="stackitem rounded-2xl"
         />
         <div className="stackitem flex justify-between p-6">
@@ -25,10 +25,10 @@ const DetailImg = ({ breed }) => {
         </div>
         <div className="glasseffect stackitem m-6 flex h-fit w-fit self-end rounded-2xl p-2">
           <Image
-            src="/dummydog.jpg"
+            src={img}
             width={32}
             height={32}
-            alt="Hund"
+            alt={breed}
             className="stackitem mr-2 rounded-lg"
           ></Image>
           <p className="text-card self-center">{breed}</p>

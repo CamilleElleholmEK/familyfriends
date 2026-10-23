@@ -30,6 +30,7 @@ const FetchData = async () => {
       {dogData.map((dog) => (
         <div key={dog.id}>
           <DogCard
+            href={`/detailview/${dog.id}`}
             breed={dog.name}
             location={dog.origin}
             imgsrc={dog.image.url}
