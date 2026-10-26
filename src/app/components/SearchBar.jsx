@@ -1,10 +1,10 @@
 import { FiSearch } from "react-icons/fi";
 import Form from "next/form";
-const SearchBar = () => {
+const SearchBar = ({ searchParams, query }) => {
   return (
     <>
       <div className="mt-4 mb-8">
-        <Form action="/search" className="flex gap-3">
+        <Form action="/" className="flex gap-3">
           <button type="submit" className="bg-primary hover rounded-full p-2.5">
             <FiSearch className="text-card" />
           </button>

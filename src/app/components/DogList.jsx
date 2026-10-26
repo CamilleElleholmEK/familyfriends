@@ -1,18 +1,23 @@
 import DogCard from "./DogCard";
-const DogList = () => {
+const DogList = ({ searchParams }) => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-        <FetchData />
+      <div className="mb-20 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        <FetchData searchParams={searchParams} />
       </div>
     </>
   );
 };
 
-const FetchData = async () => {
-  const response = await fetch("https://api.thedogapi.com/v1/breeds?limit=12", {
+const FetchData = async ({ searchParams }) => {
+  const { query } = await searchParams;
+  const url = query
+    ? `https://api.thedogapi.com/v1/breeds/search?q=${query}`
+    : `https://api.thedogapi.com/v1/breeds?limit=24`;
+
+  const response = await fetch(url, {
     headers: {
-      "x-API-key": process.env.API_KEY,
+      "x-api-key": process.env.API_KEY,
     },
   });
 
