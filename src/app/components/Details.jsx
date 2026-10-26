@@ -1,20 +1,23 @@
 import DetailText from "./DetailText";
 import Tags from "./Tags";
-const Details = ({ breed }) => {
+const Details = ({
+  breed,
+  breedDescription,
+  breedHistory,
+  trait1,
+  trait2,
+  trait3,
+  trait4,
+}) => {
   return (
     <>
       <div>
         <p className="mb-6 text-3xl font-bold">{breed}</p>
-        <Tags
-          trait1="Confident"
-          trait2="Alert"
-          trait3="Playful"
-          trait4="Loyal"
-        />
+        <Tags trait1={trait1} trait2={trait2} trait3={trait3} trait4={trait4} />
         <DetailText
-          description="Small, sturdy toy breed with a distinctive monkey-like expression and shaggy, wiry coat. Known for its confident, terrier-like personality despite its small size.
-"
-          history="Originating in 17th-century Germany, bred down from larger terriers to be skilled ratters in homes, kitchens and stables. Refined in Munich and Berlin, recognized by AKC in 1936. Name translates to 'monkey-like terrier"
+          description={breedDescription}
+
+          history={breedHistory}
         />
       </div>
     </>
