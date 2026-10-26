@@ -9,6 +9,7 @@ const SearchBar = () => {
             <FiSearch className="text-card" />
           </button>
           <input
+            type="search"
             name="query"
             placeholder="Search breeds"
             className="border-text-muted w-full rounded-full border border-solid px-3"

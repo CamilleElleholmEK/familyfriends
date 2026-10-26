@@ -2,6 +2,7 @@ import DetailImg from "@/app/components/DetailImg";
 import Details from "@/app/components/Details";
 import { Suspense } from "react";
 import Loading from "@/app/components/Loading";
+import FavoriteBtn from "@/app/components/FavoriteBtn";
 
 const DetailView = ({ params }) => {
   return (

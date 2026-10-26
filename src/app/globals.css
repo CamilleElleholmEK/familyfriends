@@ -77,6 +77,10 @@
   .trait {
     text-transform: capitalize;
   }
+
+  .favorite:first-child {
+    color: black;
+  }
 }
 
 /* @media (prefers-color-scheme: dark) {

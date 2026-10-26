@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteBtn from "./FavoriteBtn";
 import { FiChevronLeft } from "react-icons/fi";
-import { FiStar } from "react-icons/fi";
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { useState } from "react";
+
 const DetailImg = ({ breed, img }) => {
+  const [favorite, setFavorite] = useState(false);
   return (
     <>
       <div className="stackcontainer mb-4 w-fit">
@@ -19,9 +24,10 @@ const DetailImg = ({ breed, img }) => {
               <FiChevronLeft className="size-5.5 self-center" />
             </button>
           </Link>
-          <button className="hover glasseffect h-fit w-fit justify-self-end rounded-full p-1.25">
-            <FiStar className="text-card size-5.5 self-center" />
-          </button>
+          <FavoriteBtn
+            setFavorite={setFavorite}
+            icon={favorite ? <FaStar /> : <FaRegStar />}
+          />
         </div>
         <div className="glasseffect stackitem m-6 flex h-fit w-fit self-end rounded-2xl p-2">
           <Image
