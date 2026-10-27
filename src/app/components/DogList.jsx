@@ -32,6 +32,7 @@ const FetchData = async ({ searchParams }) => {
             breed={dog.name}
             location={dog.origin}
             imgsrc={dog.image.url}
+            id={dog.image.id}
           />
         </div>
       ))}

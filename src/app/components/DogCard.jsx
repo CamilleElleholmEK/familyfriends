@@ -5,7 +5,7 @@ import FavoriteBtn from "./FavoriteBtn";
 import { useState } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
-const DogCard = ({ breed, location, imgsrc, href }) => {
+const DogCard = ({ breed, location, imgsrc, href, id }) => {
   const [favorite, setFavorite] = useState(false);
   return (
     <>
@@ -21,8 +21,9 @@ const DogCard = ({ breed, location, imgsrc, href }) => {
             />
           </Link>
           <FavoriteBtn
-            setFavorite={setFavorite}
+            // setFavorite={setFavorite}
             icon={favorite ? <FaStar /> : <FaRegStar />}
+            id={id}
           />
         </div>
         <div className="text">
