@@ -26,7 +26,7 @@ const DetailImg = ({ breed, img, id }) => {
           </Link>
           <FavoriteBtn
             id={id}
-            // setFavorite={setFavorite}
+            setFavorite={setFavorite}
             icon={favorite ? <FaStar /> : <FaRegStar />}
           />
         </div>

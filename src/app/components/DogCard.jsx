@@ -21,7 +21,7 @@ const DogCard = ({ breed, location, imgsrc, href, id }) => {
             />
           </Link>
           <FavoriteBtn
-            // setFavorite={setFavorite}
+            setFavorite={setFavorite}
             icon={favorite ? <FaStar /> : <FaRegStar />}
             id={id}
           />

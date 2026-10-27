@@ -4,7 +4,10 @@ const FavoriteBtn = ({ setFavorite, icon, id }) => {
   return (
     <>
       <button
-        onClick={() => addFavorite(id)}
+        onClick={() => {
+          addFavorite(id);
+          setFavorite((favorite) => !favorite);
+        }}
 
         className="hover glasseffect stackitem m-2 h-fit w-fit justify-self-end rounded-full p-1.25"
       >
@@ -15,5 +18,3 @@ const FavoriteBtn = ({ setFavorite, icon, id }) => {
 };
 
 export default FavoriteBtn;
-
-// () => setFavorite((favorite) => !favorite);
