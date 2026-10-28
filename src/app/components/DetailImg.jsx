@@ -6,7 +6,7 @@ import { FiChevronLeft } from "react-icons/fi";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { useState } from "react";
 
-const DetailImg = ({ breed, img }) => {
+const DetailImg = ({ breed, img, id }) => {
   const [favorite, setFavorite] = useState(false);
   return (
     <>
@@ -25,6 +25,7 @@ const DetailImg = ({ breed, img }) => {
             </button>
           </Link>
           <FavoriteBtn
+            id={id}
             setFavorite={setFavorite}
             icon={favorite ? <FaStar /> : <FaRegStar />}
           />

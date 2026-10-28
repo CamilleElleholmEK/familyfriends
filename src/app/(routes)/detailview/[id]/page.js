@@ -27,9 +27,14 @@ async function FetchDetailData({ params }) {
   const temperament = breedDetails.temperament
     .split(",")
     .map((word) => word.trim());
+  console.log("image", breedDetails.image);
   return (
     <>
-      <DetailImg breed={breedDetails.name} img={breedDetails.image.url} />
+      <DetailImg
+        breed={breedDetails.name}
+        img={breedDetails.image.url}
+        id={breedDetails.image.id}
+      />
       <Details
         breed={breedDetails.name}
         breedDescription={breedDetails.description}

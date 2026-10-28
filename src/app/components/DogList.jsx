@@ -15,13 +15,21 @@ const FetchData = async ({ searchParams }) => {
     ? `https://api.thedogapi.com/v1/breeds/search?q=${query}`
     : `https://api.thedogapi.com/v1/breeds?limit=24`;
 
-  const response = await fetch(url, {
+  const headers = {
     headers: {
       "x-api-key": process.env.API_KEY,
     },
-  });
+  };
 
-  const dogData = await response.json();
+  const [breedsResponse, favoritesResponse] = await Promise.all([
+    await fetch(url, headers),
+    await fetch("https://api.thedogapi.com/v1/favourites", headers),
+  ]);
+
+  const [dogData, favoritesData] = await Promise.all([
+    await breedsResponse.json(),
+    await favoritesResponse.json(),
+  ]);
 
   return (
     <>
@@ -32,6 +40,7 @@ const FetchData = async ({ searchParams }) => {
             breed={dog.name}
             location={dog.origin}
             imgsrc={dog.image.url}
+            id={dog.image.id}
           />
         </div>
       ))}

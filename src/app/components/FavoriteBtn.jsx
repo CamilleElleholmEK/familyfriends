@@ -1,8 +1,14 @@
-const FavoriteBtn = ({ setFavorite, icon }) => {
+"use client";
+import { addFavorite } from "../actions/favorite";
+const FavoriteBtn = ({ setFavorite, icon, id }) => {
   return (
     <>
       <button
-        onClick={() => setFavorite((favorite) => !favorite)}
+        onClick={() => {
+          addFavorite(id);
+          setFavorite((favorite) => !favorite);
+        }}
+
         className="hover glasseffect stackitem m-2 h-fit w-fit justify-self-end rounded-full p-1.25"
       >
         <figure className="text-white">{icon}</figure>
